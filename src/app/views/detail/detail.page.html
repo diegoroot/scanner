@@ -1,0 +1,73 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title><ion-icon (click)="backSite()" name="arrow-back"></ion-icon> {{msjHeader}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ng-template #redimir>
+    <ion-button expand="block" (click)="scanCoupon()" color="primary">Redimir Cupon</ion-button>
+</ng-template>
+
+<ng-template #tomar>
+    <ion-button expand="block" (click)="takeCoupon()" color="primary">Tomar Cupon</ion-button>
+</ng-template>
+
+<ion-content class="{{classStyle}}" padding>
+  <ion-card>
+    <ion-card-content>
+      <img [src]="coupon.uriCoupon">
+    </ion-card-content>
+  </ion-card>
+
+  <div *ngIf="viewType; then redimir; else tomar"></div>
+
+<!--DESCRIPCION DEL BONO -->
+<ion-card>
+    <ion-card-header>
+      <ion-card-title>Descripción del Bono</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-card-subtitle></ion-card-subtitle>
+      {{lorem}}
+    </ion-card-content>
+</ion-card>
+
+<!--TERMINOS -->
+<ion-card>
+    <ion-card-header>
+      <ion-card-title>Términos y condiciones</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-card-subtitle>{{lorem}}</ion-card-subtitle>
+      <ul>
+        <li *ngFor="let student of coupon.adress">{{student.name}}</li>
+      </ul>
+    </ion-card-content>
+</ion-card>
+
+  <!--OPINIONES DEL BONO -->
+<ion-card>
+    <ion-card-header>
+      <ion-card-title>
+      Opiniones
+      </ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-list>
+        <ion-item *ngFor="let student of coupon.adress">
+          <ion-avatar slot="start">
+            <ion-img src="./assets/icon/favicon.png"></ion-img>
+          </ion-avatar>
+          <ion-label>
+            <h2>Finn</h2>
+            <h3>I'm a big deal</h3>
+            <p>Listen, I've had a pretty messed up day...</p>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+   </ion-card-content>
+  </ion-card>
+
+</ion-content>

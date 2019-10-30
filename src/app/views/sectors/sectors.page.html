@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+        <ion-button (click)="backSite()" color="danger"><ion-img src="./assets/icon/back_icon.png"></ion-img></ion-button>
+    </ion-buttons>
+    <ion-title>Sectores</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+<ion-card>
+    <ion-card-header>
+      <ion-card-title>Elige tu sector de preferencia</ion-card-title>
+    </ion-card-header>
+  <ion-card-content>
+      <ion-list>
+        <ion-item *ngFor="let sector of sectors">
+          <ion-avatar slot="start">
+            <ion-img src="./assets/icon/favicon.png"></ion-img>
+          </ion-avatar>
+          <ion-label>
+            <h2>{{sector.name}}</h2>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+   </ion-card-content>
+   </ion-card>
+</ion-content>

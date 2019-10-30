@@ -1,0 +1,23 @@
+#!/bin/sh
+#
+# con este hook garantizamos que los commits tenga un mensaje estandarizado.
+# la idea es que los commit tengan este formato:
+# <id-target-process> - <descripcion>
+# ejemplo:
+# 301 - añadir validación de campos obligatorios
+echo "[[ Executing commit-msg Hook ]]"
+if (cat $1 | grep -Eq  ^[[:digit:]]+[[:space:]]*\-[[:space:]]*.+$);
+	then
+        echo "OK";
+        exit 0
+	else
+        echo "----------------------------------------------------------------";
+        echo "|                         ERROR                                |";
+        echo "| Asegurese de que el mensaje de su commit tenga este formato: |";
+        echo "| <target-process-id> - <descripcion>                          |";
+        echo "| Ejemplos:                                                    |";
+        echo "| 123 - arregla vista detalle de unidad operativa              |";
+        echo "| 301 - añade validación de campos obligatorios                |";
+        echo "----------------------------------------------------------------";
+        exit 1
+fi

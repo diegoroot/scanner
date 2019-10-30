@@ -1,0 +1,89 @@
+ <!--<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      List
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let item of items">
+      <ion-icon [name]="item.icon" slot="start"></ion-icon>
+      {{item.title}}
+      <div class="item-note" slot="end">
+        {{item.note}}
+      </div>
+    </ion-item>
+  </ion-list> -->
+  <!--
+    <div *ngIf="selectedItem" padding>
+      You navigated here from <b>{{selectedItem.title }}</b>
+    </div>
+  -->
+<!--</ion-content>-->
+
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      !Hola {{firstname}} - {{lastname}}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-grid class="headerOptions">
+  <ion-row>
+    <ion-col col-4><ion-img routerLink="/list/" src="./assets/icon/ticket.png"></ion-img>Cupones</ion-col>
+    <ion-col col-4><ion-img src="./assets/icon/contract.png"></ion-img>Cobertura</ion-col>
+    <ion-col col-4><ion-img (click)="openTowns()" src="./assets/icon/town.png"></ion-img>Ciudades</ion-col>
+    <ion-col col-4><ion-img (click)="openSectors()" src="./assets/icon/sectors.png"></ion-img>Sectores</ion-col>
+  </ion-row>
+</ion-grid>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let cr of coupons" (click)="goToDetails(cr.coupon_id)">
+      <!--<ion-icon name="desktop" slot="start"></ion-icon>-->
+      <div class="item-note" slot="start">
+          <ion-card>
+              <ion-card-content>
+       <ion-grid>
+          <ion-row>
+            <ion-col col-12>
+                <img [src]="cr.uriCoupon">
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-12>
+                <ion-list>
+                    <ion-item>
+                      <ion-avatar slot="start">
+                        <ion-img src="./assets/icon/favicon.png"></ion-img>
+                      </ion-avatar>
+                      <ion-label>
+                        <h2>{{cr.enterprise}}</h2>
+                        <h3>Número de cupones: {{cr.count}}</h3>
+                        <p>{{cr.short_description}}</p>
+                      </ion-label>
+                    </ion-item>
+                  </ion-list>
+            </ion-col>
+          </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+      </div>
+    </ion-item>   
+  </ion-list>
+  <!--
+    <div *ngIf="selectedItem" padding>
+      You navigated here from <b>{{selectedItem.title }}</b>
+    </div>
+  -->
+</ion-content>
+  

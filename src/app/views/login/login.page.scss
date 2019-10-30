@@ -1,0 +1,36 @@
+app-login {
+    div#logo {
+      margin-top: 25px;
+      margin-bottom: 12px;
+    }
+    .content {
+      background-color: #488aff;
+    }
+    .item {
+      background-color: #488aff;
+    }
+  
+    ion-label {
+      color: #f4f4f4;
+      text-align: center;
+      margin: 0;
+    }
+  
+    .label {
+      margin: 0 0 5px 0;
+    }
+  
+    ion-input {
+      background-color: #fff;
+      border-radius: 500px;
+      margin: 0 0 25px 0;
+    }
+  }
+
+  $colors: (
+    primary:    #488aff,
+    secondary:  #32db64,
+    danger:     #f53d3d,
+    light:      #f4f4f4,
+    dark:       #222
+  );

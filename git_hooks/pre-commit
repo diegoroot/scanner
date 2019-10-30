@@ -1,0 +1,12 @@
+#!/bin/sh
+#
+# con este hook garantizamos que el codigo cumple con las validaciones de linting
+echo "[[ Executing pre-commit Hook ]]"
+
+echo "[[ Checking Linting ]]"
+npm run lint
+rc=$?; if [ $rc != 0 ]; then exit $rc; fi
+echo "OK"
+
+echo "END"
+exit 0
